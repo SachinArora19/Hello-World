@@ -111,6 +111,27 @@
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!------ Include the above in your HEAD tag ---------->
+<script>
+var defaultCnt=1;
+$(document).ready(function(){
+	$("#ifDDL").empty();
+		$("#ifDDL").append('<option value="volvo">Default 1</option>');
+		$("#ifDDL").append('<option value="volvo">Default 2</option>');
+		$("#ifDDL").append('<option value="volvo">Default 3</option>');
+	});
+function addDdl()
+    {
+		var ddlHTML='<div class="row" style="margin-top:1vw"><select id="newDDL'+defaultCnt+'"><option value="volvo">New Dropdown '+defaultCnt+'.1</option><option value="volvo">New Dropdown '+defaultCnt+'.2</option><option value="volvo">New Dropdown '+defaultCnt+'.3</option></select></div>';
+        $('#additionalDdl').append(ddlHTML);
+		defaultCnt++;
+    }
+    //let collapsePanelBody = () => {
+    function removeLastDdl()
+    {
+        $('#additionalDdl').children().last().remove();
+		defaultCnt--;
+    }
+</script>
 </head>
  <body>
    <div id="wrapper">
@@ -218,17 +239,16 @@
 
                             </div>
                             <div class="row"><br>
-                              <div style="padding-left: 4em;">  if <select id="ifDDL"></select> 
-							  <h2>AND</h2> if
-<select>
-<option value="volvo">TV : Video streaming is ON</option> 
-</select>
-<h2>THEN</h2>
-<select>
-<option value="volvo">HUE : Turn On</option> 
-</select>
-
-</div>
+								<div style="padding-left: 4em;">  <div class="row">if <select id="ifDDL"></select> 
+								<div>
+									<i class="fa fa-plus-circle" data-toggle="tooltip" title="Expand All" onclick="addDdl();" style="color:yellowgreen;cursor:pointer;font-size: medium;"></i>
+									<i class="fa fa-minus-circle"  data-toggle="tooltip" title="Collapse All" onclick="removeLastDdl();" style="color:#ffc000;cursor:pointer;font-size: medium;"></i>			
+								</div>
+								<div id="additionalDdl"></div>
+								</div>
+								  <h2>AND</h2> if <select><option value="volvo">TV : Video streaming is ON</option> </select>
+								  <h2>THEN</h2><select><option value="volvo">HUE : Turn On</option> </select>
+								</div>
                             </div>
                         </div>
 
@@ -273,12 +293,6 @@
 		$("#ifDDL").append('<option value="volvo">Conditions 2</option>');
 		$("#ifDDL").append('<option value="volvo">Conditions 3</option>');
 	}
-	});
-	$(document).ready(function(){
-	$("#ifDDL").empty();
-		$("#ifDDL").append('<option value="volvo">Default 1</option>');
-		$("#ifDDL").append('<option value="volvo">Default 2</option>');
-		$("#ifDDL").append('<option value="volvo">Default 3</option>');
 	});
     </script>
 </body>
