@@ -203,25 +203,20 @@
 
 
                     </div>
-                </div>
-            </div>
-        </div>
-        <!-- /#page-content-wrapper -->
-
-    </div>
+                
     <!-- /#wrapper -->
      <!-- Menu Toggle Script -->
     <script>
 	var cnt=1;
 	$(function () {
-	  $( "#phoneDraggable,#tvDraggable,#hueDraggable,#xpsDraggable" ).draggable({
+	  $( "#phoneDraggable,#tvDraggable,#hueDraggable,#xpsDraggable,#syncBtn" ).draggable({
     appendTo: "body",
     cursor: "move",
     helper: 'clone'
 });
 	$("#page-content-wrapper").droppable({
     tolerance: "intersect",
-    accept: "#phoneDraggable,#tvDraggable,#hueDraggable,#xpsDraggable",
+    accept: "#phoneDraggable,#tvDraggable,#hueDraggable,#xpsDraggable,#syncBtn",
     activeClass: "ui-state-default",
     hoverClass: "ui-state-hover",
     drop: function(event, ui) {
@@ -245,8 +240,33 @@
 		$("#xpsDraggable"+cnt).draggable();
 		cnt++;
 		}
+		else if(ui.draggable[0].id==="syncBtn")
+		{
+			$(".try").append('<div id="syncBtn'+cnt+'" class="syncBtn col-md-3"><div class="fa fa-arrows-h" style="font-size: 13em;margin-left: 0.7em; "></div></div>');
+			$("#syncBtn"+cnt).draggable({
+				drag: function(event, ui){
+					if(($(".tvDraggable").position().left<$(".syncBtn").position().left)&&($(".hueDraggable").position().left>$(".syncBtn").position().left))
+					{
+						$(".syncBtn").css("color","red");
+					}
+					else
+					{
+						$(".syncBtn").css("color","black");
+					}
+				},
+				stop: function(event, ui)
+				{
+					if(($(".phoneDraggable").position().left<$(".syncBtn").position().left)&&($(".tvDraggable").position().left>$(".syncBtn").position().left))
+						{
+							$("#myModal").removeAttr('hidden');
+						}
+				}
+			});
+			cnt++;
+		}
     }
 });
+
 $("#syncBtn").click(function(){
 	$(".phoneDraggable").css("border-style","solid");
 	$(".phoneDraggable").css("border-color","green");
@@ -265,5 +285,43 @@ $("#syncBtn").click(function(){
         $("#wrapper").toggleClass("toggled");
     });
     </script>
+	<!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog" hidden>
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 </body>
     </html>
