@@ -118,6 +118,11 @@ $(document).ready(function(){
 		$("#ifDDL").append('<option value="volvo">Default 1</option>');
 		$("#ifDDL").append('<option value="volvo">Default 2</option>');
 		$("#ifDDL").append('<option value="volvo">Default 3</option>');
+		
+		$("#thenDDL").empty();
+		$("#thenDDL").append('<option value="volvo">Default 4</option>');
+		$("#thenDDL").append('<option value="volvo">Default 5</option>');
+		$("#thenDDL").append('<option value="volvo">Default 6</option>');
 	});
 function addDdl()
     {
@@ -244,7 +249,7 @@ function addDdl()
 
                                 </div>
                                 <div class="col-md-4">
-                                     <div style="padding-left: 4em;">  <div class="row"><h1>Then</h1> <select id="ifDDL"></select> <select><option>-</option><option>AND</option><option>OR</option></select> 
+                                     <div style="padding-left: 4em;">  <div class="row"><h1>Then</h1> <select id="thenDDL"></select> <select><option>-</option><option>AND</option><option>OR</option></select> 
                                         
                                             <i class="fa fa-plus-circle" data-toggle="tooltip" title="Expand All" onclick="addDdl();" style="color:yellowgreen;cursor:pointer;font-size: medium;"></i>
                                             <i class="fa fa-minus-circle"  data-toggle="tooltip" title="Collapse All" onclick="removeLastDdl();" style="color:#ffc000;cursor:pointer;font-size: medium;"></i>       
@@ -283,24 +288,45 @@ function addDdl()
 		$("#ifDDL").append('<option value="volvo">Self 1</option>');
 		$("#ifDDL").append('<option value="volvo">Self 2</option>');
 		$("#ifDDL").append('<option value="volvo">Self 3</option>');
+		
+		$("#thenDDL").empty();
+        $("#thenDDL").append('<optgroup label="Swedish Cars">');
+		$("#thenDDL").append('<option value="volvo">Self 4</option>');
+		$("#thenDDL").append('<option value="volvo">Self 5</option>');
+		$("#thenDDL").append('<option value="volvo">Self 6</option>');
 	}
 	else if(selectedId==="usersDiv"){
 		$("#ifDDL").empty();
 		$("#ifDDL").append('<option value="volvo">Users 1</option>');
 		$("#ifDDL").append('<option value="volvo">Users 2</option>');
 		$("#ifDDL").append('<option value="volvo">Users 3</option>');
+		
+		$("#thenDDL").empty();
+		$("#thenDDL").append('<option value="volvo">Users 4</option>');
+		$("#thenDDL").append('<option value="volvo">Users 5</option>');
+		$("#thenDDL").append('<option value="volvo">Users 6</option>');
 	}
 	else if(selectedId==="devicesDiv"){
 		$("#ifDDL").empty();
 		$("#ifDDL").append('<option value="volvo">Devices 1</option>');
 		$("#ifDDL").append('<option value="volvo">Devices 2</option>');
 		$("#ifDDL").append('<option value="volvo">Devices 3</option>');
+		
+		$("#thenDDL").empty();
+		$("#thenDDL").append('<option value="volvo">Devices 4</option>');
+		$("#thenDDL").append('<option value="volvo">Devices 5</option>');
+		$("#thenDDL").append('<option value="volvo">Devices 6</option>');
 	}
 	else if(selectedId==="conditionsDiv"){
 		$("#ifDDL").empty();
 		$("#ifDDL").append('<option value="volvo">Conditions 1</option>');
 		$("#ifDDL").append('<option value="volvo">Conditions 2</option>');
 		$("#ifDDL").append('<option value="volvo">Conditions 3</option>');
+		
+		$("#thenDDL").empty();
+		$("#thenDDL").append('<option value="volvo">Conditions 4</option>');
+		$("#thenDDL").append('<option value="volvo">Conditions 5</option>');
+		$("#thenDDL").append('<option value="volvo">Conditions 6</option>');
 	}
 	});
     </script>
