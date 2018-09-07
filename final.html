@@ -1,0 +1,357 @@
+<html>
+
+<head>
+    <style>
+        /*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+/* Toggle Styles */
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+#wrapper.toggled {
+    padding-left: 250px;
+}
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+/* Sidebar Styles */
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+    #sidebar-wrapper {
+        width: 250px;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+    </style>
+    <script >
+        function fun1(){alert(1);}
+    </script>
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.24/jquery-ui.min.js" type="text/javascript"></script>
+<link href="http://code.jquery.com/ui/1.8.24/themes/blitzer/jquery-ui.css" rel="stylesheet"
+
+<!------ Include the above in your HEAD tag ---------->
+</head>
+ <body>
+ <div id="myModal" class="modal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default close">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="myModal1" class="modal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close close1">&times;</button>
+        <h4 class="modal-title">Data transfer</h4>
+      </div>
+      <div class="modal-body">
+        <p>What type of data would you like to transfer across ipad and Dell XPS</p>
+        <form action="/action_page.php">
+ <div class="form-group">
+  <label for="sel1">Select list:</label>
+  <select class="form-control" id="sel1">
+    <option>Music</option>
+    <option>Pictures</option>
+    <option>Videos</option>
+    <option>Files</option>
+  </select>
+</div> 
+    <div class="form-group">
+      <label for="pwd">Select a file:</label>
+        <input type="file" name="myFile"><br><br>
+  
+    </div>
+ 
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default close close1">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+   <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        WISE : Authoring Tool
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Workspace</a>
+                </li>
+                <li>
+                    <a href="#">Devices</a>
+                    <a href="#"id="phoneDraggable"><span class="glyphicon glyphicon-phone"></span> iPhone 8</h4>
+                        <a href="#"id="tvDraggable"><span class="fa fa-tv" style="font-size: 18px;"></span> Samsung TV</h4>
+                            <a href="#"id="hueDraggable"><span class="fa fa-lightbulb-o" style="font-size: 20px;"></span> Philips Hue</h4>
+                                <a href="#"id="xpsDraggable"><span class="fa fa-laptop" style="font-size: 18px;"></span> Dell XPS</h4>
+								<a href="#"id="ipadDraggable"><span class="fa fa-tablet" style="font-size: 18px;"></span> iPad</h4>
+                </li>
+                   <li>
+                    <a href="#">Tools</a>
+                    <a href="#" id="syncBtn"><span class="fa fa-arrows-h"></span> Sync</h4>
+                        <a href="#"  id="dtBtn"><span class="fa fa-long-arrow-right" style="font-size: 18px;"></span> Data transfer</a>
+                            <a href="#"><span class="fa fa-sort-numeric-asc" style="font-size: 20px;"></span> Sequence</a>
+                          </a>   
+                </li>
+
+
+                  <li>
+                    <a href="#">Logout</a>
+                </li>
+                <li>
+                    <a href="#">Help</a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                 <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style="padding-bottom: ">Menu</a>
+                 <center><h2>Workspace : Untitled</h2></center>
+<br><br><br>
+
+                <div class="row"><center class="try"></center></div>
+                         
+                            </div><br><hr>
+
+                     
+
+
+          
+                     
+                        </div>
+
+
+                    </div>
+                
+    <!-- /#wrapper -->
+     <!-- Menu Toggle Script -->
+    <script>
+	var cnt=1;
+	$(function () {
+	  $( "#phoneDraggable,#tvDraggable,#hueDraggable,#xpsDraggable,#ipadDraggable,#syncBtn,#dtBtn" ).draggable({
+    appendTo: "body",
+    cursor: "move",
+    helper: 'clone'
+});
+	$("#page-content-wrapper").droppable({
+    tolerance: "intersect",
+    accept: "#phoneDraggable,#tvDraggable,#hueDraggable,#xpsDraggable,#ipadDraggable,#syncBtn,#dtBtn",
+    activeClass: "ui-state-default",
+    hoverClass: "ui-state-hover",
+    drop: function(event, ui) {
+		if(ui.draggable[0].id==="phoneDraggable")
+		{$(".try").append('<div id="phoneDraggable'+cnt+'" class="phoneDraggable col-md-3"><img width="10%" onclick="fun1()" style="margin:-2.3em;" src="img/settings.svg"><div class="glyphicon glyphicon-phone" style="font-size: 13em;"></div><img width="10%" style="margin: -2em;" src="img/zoom-in.svg"></div>');
+		$("#phoneDraggable"+cnt).draggable();
+		cnt++;
+		}
+		else if(ui.draggable[0].id==="tvDraggable")
+		{$(".try").append('<div id="tvDraggable'+cnt+'" class="tvDraggable col-md-3"><img width="10%" style="margin:-0.3em;" src="img/settings.svg"><div class="fa fa-tv" style="font-size: 13em; "></div><img width="10%" style="margin: -0.2em;" src="img/zoom-in.svg"></div>');
+		$("#tvDraggable"+cnt).draggable();
+		cnt++;
+		}
+		else if(ui.draggable[0].id==="hueDraggable")
+		{$(".try").append('<div id="hueDraggable'+cnt+'" class="hueDraggable col-md-3"><img width="10%" style="margin:-1.3em;" src="img/settings.svg"><div class="fa fa-lightbulb-o" style="font-size: 13em;"></div><img width="10%" style="margin: -1em;" src="img/zoom-in.svg"></div>');
+		$("#hueDraggable"+cnt).draggable();
+		cnt++;
+		}
+		else if(ui.draggable[0].id==="xpsDraggable")
+		{$(".try").append('<div id="xpsDraggable'+cnt+'" class="xpsDraggable col-md-3"><img width="10%"  src="img/settings.svg"><div class="fa fa-laptop" style="font-size: 13em; "></div><img width="10%"  src="img/zoom-in.svg"></div>');
+		$("#xpsDraggable"+cnt).draggable();
+		cnt++;
+		}
+		else if(ui.draggable[0].id==="ipadDraggable")
+        {$(".try").append('<div id="ipadDraggable'+cnt+'" class="ipadDraggable col-md-3"><img width="10%" style="margin-left:-4em;margin-right: -9em;" src="img/settings.svg"><div class="fa fa-tablet" style="font-size: 13em;margin-left: 0.7em; "></div><img width="10%" style="margin: -0.1em;" src="img/zoom-in.svg"></div>');
+        $("#ipadDraggable"+cnt).draggable();
+        cnt++;
+        }
+		else if(ui.draggable[0].id==="syncBtn")
+		{$(".try").append('<div id="syncBtn'+cnt+'" class="syncBtn col-md-3"><div class="fa fa-arrows-h" style="font-size: 13em;margin-left: 0.7em; "></div></div>');
+		$("#syncBtn"+cnt).draggable({
+		drag: function(event, ui){
+					if(($(".tvDraggable").position().left<$(".syncBtn").position().left)&&($(".hueDraggable").position().left>$(".syncBtn").position().left))
+					{
+						$(".syncBtn").css("color","red");
+					}
+					else
+					{
+						$(".syncBtn").css("color","black");
+					}
+				},
+				stop: function(event, ui)
+				{
+					if(($(".phoneDraggable").position().left<$(".syncBtn").position().left)&&($(".tvDraggable").position().left>$(".syncBtn").position().left))
+						{
+							$("#myModal").css("display","block");
+						}
+						
+				}
+			});
+		cnt++;
+		}
+		else if(ui.draggable[0].id==="dtBtn")
+		{$(".try").append('<div id="dtBtn'+cnt+'" class="dtBtn col-md-3"><div class="fa fa-long-arrow-right" style="font-size: 13em;margin-left: 0.7em; "></div></div>');
+		$("#dtBtn"+cnt).draggable({
+		drag: function(event, ui){
+					
+				},
+				stop: function(event, ui)
+				{
+					$("#myModal1").css("display","block");	
+							$("#myModal1").css("display","block");
+						
+				}
+			});
+		cnt++;
+		}
+    }
+});
+$("#syncBtn").click(function(){
+	$(".phoneDraggable").css("border-style","solid");
+	$(".phoneDraggable").css("border-color","green");
+	
+	$(".tvDraggable").css("border-style","solid");
+	$(".tvDraggable").css("border-color","green");
+	
+	$(".hueDraggable").css("border-style","solid");
+	$(".hueDraggable").css("border-color","red");
+});
+	
+});
+  
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+	$(".close").click(function(){
+	$("#myModal").css("display","none");
+	});
+	$(".close1").click(function(){
+	$("#myModal1").css("display","none");
+	});
+	$(document).ready(function(){
+		$("#myModal").css("display","none");
+		$("#myModal1").css("display","none");
+	});
+    </script>
+		
+</body>
+    </html>
