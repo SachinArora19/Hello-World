@@ -107,7 +107,7 @@
 }
     </style>
     <script >
-        function fun1(){alert(1);}
+        function fun1(){window.location="http://www.google.com";}
     </script>
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -259,7 +259,7 @@
     hoverClass: "ui-state-hover",
     drop: function(event, ui) {
 		if(ui.draggable[0].id==="phoneDraggable")
-		{$(".try").append('<div id="phoneDraggable'+cnt+'" class="phoneDraggable col-md-3"><img width="10%" onclick="fun1()" style="margin:-2.3em;" src="img/settings.svg"><div class="glyphicon glyphicon-phone" style="font-size: 13em;"></div><img width="10%" style="margin: -2em;" src="img/zoom-in.svg"></div>');
+		{$(".try").append('<div id="phoneDraggable'+cnt+'" class="phoneDraggable col-md-3"><div onclick="fun1()"><img width="10%" style="margin:-2.3em;" src="img/settings.svg"></div><div class="glyphicon glyphicon-phone" style="font-size: 13em;"></div><img width="10%" style="margin: -2em;" src="img/zoom-in.svg"></div>');
 		$("#phoneDraggable"+cnt).draggable();
 		cnt++;
 		}
