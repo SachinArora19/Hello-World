@@ -136,6 +136,19 @@ function addDdl()
         $('#additionalDdl').children().last().remove();
 		defaultCnt--;
     }
+	
+	function addDdl1()
+    {
+		var ddlHTML='<div class="row" style="margin-top:1vw"><select id="newDDL'+defaultCnt+'"><option value="volvo">New Dropdown '+defaultCnt+'.1</option><option value="volvo">New Dropdown '+defaultCnt+'.2</option><option value="volvo">New Dropdown '+defaultCnt+'.3</option></select></div>';
+        $('#additionalDdl1').append(ddlHTML);
+		defaultCnt++;
+    }
+    //let collapsePanelBody = () => {
+    function removeLastDdl1()
+    {
+        $('#additionalDdl1').children().last().remove();
+		defaultCnt--;
+    }
 </script>
 </head>
  <body>
@@ -251,9 +264,9 @@ function addDdl()
                                 <div class="col-md-4">
                                      <div style="padding-left: 4em;">  <div class="row"><h1>Then</h1> <select id="thenDDL"></select> <select><option>-</option><option>AND</option><option>OR</option></select> 
                                         
-                                            <i class="fa fa-plus-circle" data-toggle="tooltip" title="Expand All" onclick="addDdl();" style="color:yellowgreen;cursor:pointer;font-size: medium;"></i>
-                                            <i class="fa fa-minus-circle"  data-toggle="tooltip" title="Collapse All" onclick="removeLastDdl();" style="color:#ffc000;cursor:pointer;font-size: medium;"></i>       
-                                        <div id="additionalDdl"></div>
+                                            <i class="fa fa-plus-circle" data-toggle="tooltip" title="Expand All" onclick="addDdl1();" style="color:yellowgreen;cursor:pointer;font-size: medium;"></i>
+                                            <i class="fa fa-minus-circle"  data-toggle="tooltip" title="Collapse All" onclick="removeLastDdl1();" style="color:#ffc000;cursor:pointer;font-size: medium;"></i>       
+                                        <div id="additionalDdl1"></div>
                                         </div>
                                           <!--<h2>AND</h2> if <select><option value="volvo">TV : Video streaming is ON</option> </select>
                                           <h2>THEN</h2><select><option value="volvo">HUE : Turn On</option> </select>-->
