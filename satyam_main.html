@@ -178,6 +178,7 @@
                         <a href="#"id="tvDraggable"><span class="fa fa-tv" style="font-size: 18px;"></span> Samsung TV</h4>
                             <a href="#"id="hueDraggable"><span class="fa fa-lightbulb-o" style="font-size: 20px;"></span> Philips Hue</h4>
                                 <a href="#"id="xpsDraggable"><span class="fa fa-laptop" style="font-size: 18px;"></span> Dell XPS</h4>
+								<a href="#"id="ipadDraggable"><span class="fa fa-tablet" style="font-size: 18px;"></span> iPad</h4>
                 </li>
                    <li>
                     <a href="#">Tools</a>
@@ -225,14 +226,14 @@
     <script>
 	var cnt=1;
 	$(function () {
-	  $( "#phoneDraggable,#tvDraggable,#hueDraggable,#xpsDraggable,#syncBtn,#dtBtn" ).draggable({
+	  $( "#phoneDraggable,#tvDraggable,#hueDraggable,#xpsDraggable,#ipadDraggable,#syncBtn,#dtBtn" ).draggable({
     appendTo: "body",
     cursor: "move",
     helper: 'clone'
 });
 	$("#page-content-wrapper").droppable({
     tolerance: "intersect",
-    accept: "#phoneDraggable,#tvDraggable,#hueDraggable,#xpsDraggable,#syncBtn,#dtBtn",
+    accept: "#phoneDraggable,#tvDraggable,#hueDraggable,#xpsDraggable,#ipadDraggable,#syncBtn,#dtBtn",
     activeClass: "ui-state-default",
     hoverClass: "ui-state-hover",
     drop: function(event, ui) {
@@ -256,7 +257,11 @@
 		$("#xpsDraggable"+cnt).draggable();
 		cnt++;
 		}
-		
+		else if(ui.draggable[0].id==="ipadDraggable")
+        {$(".try").append('<div id="ipadDraggable'+cnt+'" class="ipadDraggable col-md-3"><div class="fa fa-tablet" style="font-size: 13em;margin-left: 0.7em; "></div></div>');
+        $("#ipadDraggable"+cnt).draggable();
+        cnt++;
+        }
 		else if(ui.draggable[0].id==="syncBtn")
 		{$(".try").append('<div id="syncBtn'+cnt+'" class="syncBtn col-md-3"><div class="fa fa-arrows-h" style="font-size: 13em;margin-left: 0.7em; "></div></div>');
 		$("#syncBtn"+cnt).draggable({
@@ -320,6 +325,10 @@ $("#syncBtn").click(function(){
 	});
 	$(".close1").click(function(){
 	$("#myModal1").css("display","none");
+	});
+	$(document).ready(function(){
+		$("#myModal").css("display","none");
+		$("#myModal1").css("display","none");
 	});
     </script>
 		
